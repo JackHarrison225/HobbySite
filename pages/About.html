@@ -3,7 +3,7 @@
      <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Home</title>
+          <title>Document</title>
           <script src="https://cdn.tailwindcss.com"></script>
           <audio id="Pop" src="../Sounds/shooting.mp3"></audio>
      </head>
@@ -15,6 +15,16 @@
                <!-- Navagation bar -->
                <nav id="menu" class="fixed top-0 left-0 w-full max-sm:hidden">
                     <ul class="overflow-hidden list-none m-0 p-0" >
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <a href="Index.html" 
+                                   onmouseover="PlaySound('Pop')" 
+                                   class="block text-black text-center px-4 pl-3.5 
+                                   no-underline border-t-4 border-t-gray-500 
+                                   hover:border-t-green-600 rounded-b-lg bg-gray-500 
+                                   h-10 w-28 hover:h-11 hover:pt-2" >
+                                   Home
+                              </a>
+                         </li>
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
                               <a href="Encryption.html" 
                                    onmouseover="PlaySound('Pop')" 
@@ -42,17 +52,7 @@
                                    no-underline border-t-4 border-t-gray-500 
                                    hover:border-t-green-600 rounded-b-lg bg-gray-500 
                                    h-10 w-28 hover:h-11 hover:pt-2" >
-                                   Nav 3
-                              </a>
-                         </li>
-                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
-                              <a href="About.html" 
-                                   onmouseover="PlaySound('Pop')" 
-                                   class="block text-black text-center px-4 pl-3.5 
-                                   no-underline border-t-4 border-t-gray-500 
-                                   hover:border-t-green-600 rounded-b-lg bg-gray-500 
-                                   h-10 w-28 hover:h-11 hover:pt-2" >
-                                   About
+                                   Nav 4
                               </a>
                          </li>
                     </ul>
@@ -61,6 +61,14 @@
                <!-- Mobile menu toggle -->
                <div class="sm:hidden left-0">
                     <div  class="fixed float-left top-0 left-0 w-28" >
+                         <a href="Index.html" 
+                         onmouseover="PlaySound('Pop')" 
+                         class="text-black bg-gray-500 border-l-4 border-gray-500
+                         hover:border-green-600 px-3.5 pl-3.5 text-base font-medium 
+                         w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
+                         p-1 h-10">
+                              Home
+                         </a>
                          <a href="Encryption.html" 
                          onmouseover="PlaySound('Pop')" 
                          class="text-black bg-gray-500 border-l-4 border-gray-500
@@ -83,15 +91,7 @@
                          hover:border-green-600 px-3.5 pl-3.5 text-base font-medium 
                          w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
                          p-1 h-10">
-                              Nav 3
-                         </a>
-                         <a href="About.html" 
-                         onmouseover="PlaySound('Pop')" 
-                         class="text-black bg-gray-500 border-l-4 border-gray-500
-                         hover:border-green-600 px-3.5 pl-3.5 text-base font-medium 
-                         w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
-                         p-1 h-10">
-                              About
+                              Nav4
                          </a>
                     </div>
                </div>
@@ -112,7 +112,7 @@
                col-start-3 
                max-md:col-start-2
                max-sm:col-start-2 ">
-                    Cryptography Overview
+                    About Us
                </h1>
 
                <img src="../Img/left.jpg" alt="BorderLeft"
@@ -147,7 +147,6 @@
                max-sm:col-start-2
                max-md:col-start-2
                shadow-green-600 shadow-lg">
-
                </p>
                <img src="../Img/right.jpg" alt="BorderRight"
                style="width:138; height:427;"
@@ -160,7 +159,7 @@
           </main>
           <!-- Footer -->
           <footer class="mt-7 w-full h-40 bg-gray-500 br rounded-t-2xl">
-               
+               <hr style="size:4px; width:80%; color:black;">
           </footer>
 
      </body>
