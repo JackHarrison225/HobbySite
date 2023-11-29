@@ -3,60 +3,77 @@
      <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
           <script src="https://cdn.tailwindcss.com"></script>
-          <title>Hobby Page Home</title>
+          <audio id="Pop" src="../Sounds/pop.mp3"></audio>
      </head>
-     
-     <!-- Body of the page -->
-     <body class="overflow-hidden text-center bg-white">
+     <body>
 
-          <!-- Navagation bar -->
-          <nav id="menu" class="fixed top-0 left-0 w-full max-sm:hidden">
-               <ul class="overflow-hidden list-none m-0 p-0" >
-                    <li class="float-left text-x1"><!-- Nav link for section ABC -->
-                         <a class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" href="">Nav 1</a>
-                    </li>
-                    <li class="float-left text-x1"><!-- Nav link for section ABC -->
-                         <a class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2 " href="">Nav 2</a>
-                    </li>
-                    <li class="float-left text-x1"><!-- Nav link for section ABC -->
-                         <a class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" href="">Nav 3</a>
-                    </li>
-                    <li class="float-left text-x1"><!-- Nav link for section ABC -->
-                         <a class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" href="">Nav 4</a>
-                    </li>
-               </ul>
-         </nav>
+          <!-- Body of the NavBar -->
+          <div class="overflow-hidden text-center bg-white">
 
-         <!-- Mobile menu, show/hide based on menu state. Look Into This-->
-          <div class="sm:hidden left-">
-               <div  class="fixed float-left top-0 left-0 w-28" >
+               <!-- Navagation bar -->
+               <nav id="menu" class="fixed top-0 left-0 w-full max-sm:hidden">
+                    <ul class="overflow-hidden list-none m-0 p-0" >
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <a href="#" 
+                              onmouseover="PlaySound('Pop')" 
+                              class="block text-black text-center px-4 pl-3.5 
+                              no-underline border-t-4 border-t-gray-500 
+                              hover:border-t-green-600 rounded-b-lg bg-gray-500 
+                              h-10 w-28 hover:h-11 hover:pt-2" >
+                              Nav 1
+                         </a>
+                         </li>
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <a href="#" onmouseover="PlaySound('Pop')" class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" >Nav 2</a>
+                         </li>
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <a href="#" onmouseover="PlaySound('Pop')" class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" >Nav 3</a>
+                         </li>
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <a href="#" onmouseover="PlaySound('Pop')" class="block text-black text-center px-4 pl-3.5 no-underline border-t-4 border-t-gray-500 hover:border-t-green-600 rounded-b-lg bg-gray-500 h-10 w-28 hover:h-11 hover:pt-2" >Nav 4</a>
+                         </li>
+                    </ul>
+               </nav>
 
-               <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 1</a>
-               <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 2</a>
-               <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 3</a>
-               <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 4</a>
+               <!-- Mobile menu toggle -->
+               <div class="sm:hidden left-">
+                    <div  class="fixed float-left top-0 left-0 w-28" >
+
+                         <a href="#" 
+                              onmouseover="PlaySound('Pop')" 
+                              class="text-black bg-gray-500 border-l-4 border-gray-500
+                              hover:border-green-600 px-3.5 pl-3.5 text-base font-medium 
+                              w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
+                              p-1 h-10">
+                              Nav 1
+                         </a>
+                         <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 2</a>
+                         <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 3</a>
+                         <a href="#" onmouseover="PlaySound('Pop')" class="text-black bg-gray-500 border-l-4 border-gray-500 hover:border-green-600 px-3.5 pl-3.5 text-base font-medium w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">Nav 4</a>
+                    
+                    </div>
                </div>
+
+               
           </div>
 
-          <audio id="Pop" src="../Sounds/pick-92276.mp3"></audio>
+          <!-- Main body of Page -->
+          <main>
 
-          <script>
-               function PlaySound(SoundObj) 
-               {
-                    var thissound = document.getElementById(SoundObj);
-                    thissound.play();
-               }
+          </main>
 
-
-               function StopSound(Soundobj) 
-               {
-                    var thissound = document.getElementById(Soundobj);
-                    thissound.pause();
-                    thissound.currentTime = 0;
-               }
-          </script>
      </body>
+
+     <script>
+          function PlaySound(SoundObj) 
+          {
+               var thissound = document.getElementById(SoundObj);
+               thissound.currentTime = 0;
+               thissound.play();
+               
+          }
+
+     </script>
 </html>
-
-
