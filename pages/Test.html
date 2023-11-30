@@ -3,7 +3,7 @@
      <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
+          <title>Try Our Converters</title>
           <script src="https://cdn.tailwindcss.com"></script>
           <audio id="Pop" src="../Sounds/shooting.mp3"></audio>
      </head>
@@ -126,13 +126,13 @@
                col-span-3 text-center text-4xl p-2
                col-start-3 
                max-md:col-start-2
-               max-sm:col-start-2 ">
+               max-sm:col-start-2 
+               max-sm:text-[7.5vw]">
                     Test Our Coverters
                </h1>
 
                <!-- encoding and dencoding -->
                <div 
-               style="height:427;"
                class="text-black col-start-2 p-2 
                col-span-3 bg-gray-400
                shadow-lg shadow-green-600 items-center
@@ -155,18 +155,20 @@
                          Decode</button>
                     </div>
                     <br>
-                    <!-- Binary -->
+                    <!-- Ceaser Cypher -->
                     <div>
-                         <h3 class="underline mb-1">Binary</h3>
+                         <h3 class="underline mb-1">Ceaser Cypher</h3>
                          <!-- Encode -->
-                         <input type="text" id ="BTText" value="Try me" class="w-3/4 my-1">
-                         <button onclick="EncryptTextB('BTText')"
+                         <input type="text" id ="CCTText" value="Try me" class="w-1/2 my-1">
+                         <input type="text" id ="CCTNum" value="2" class="w-[25%] my-1">
+                         <button onclick="EncryptTextCC('CCTText', 'CCTNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
                          Encode</button>
                          <br>
                          <!-- Decode -->
-                         <input type="text" id ="BFText" value="Try me" class="w-3/4 my-1">
-                         <button onclick="DecryptTextB('BFText')"
+                         <input type="text" id ="CCFText" value="vtaog" class="w-1/2 my-1">
+                         <input type="text" id ="CCFNum" value="2" class="w-[25%] my-1">
+                         <button onclick="DecryptTextCC('CCFText', 'CCFNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
                          Decode</button>
                     </div>
@@ -192,7 +194,6 @@
 
                <!-- show the results -->
                <div 
-               style="height:427;"
                class="text-black col-start-4 p-2 
                col-span-3 bg-gray-400 
                max-sm:col-start-2
@@ -208,11 +209,11 @@
                          <p id="FromB64" class="my-1">Decoded:</p>
                     </div>
                     <br>
-                    <!-- Binary -->
+                    <!-- Ceasaer Cypher -->
                     <div id="">
-                         <h3 class="underline mb-1">Binary</h3>
-                         <p id="ToBin" class="my-1">Encoded:</p>
-                         <p id="FromBin" class="my-1">Decoded:</p>
+                         <h3 class="underline mb-1">Ceasaer Cypher</h3>
+                         <p id="ToCC" class="my-1">Encoded:</p>
+                         <p id="FromCC" class="my-1">Decoded:</p>
                     </div>
                     <br>
                     <!-- Hex -->
@@ -258,16 +259,94 @@
                document.getElementById("FromB64").innerHTML = "Decoded: " + Decoded;
           }
 
-          //Binary
-          function EncryptTextB(TextId){
-               var text = document.getElementById(TextId).value;
+          //Ceaser Cypher
+          function EncryptTextCC(TextId, Num){
+               let textArr = document.getElementById(TextId).value;
+               textArr = textArr.toLowerCase()
+               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+               let count = [...Array(26)].map((_, i) => i);
+               let num = document.getElementById(Num).value;
+               let shift = parseInt(num);
+               let ecoded = [];
+               let temp = [];
 
-               document.getElementById("ToBin").innerHTML = "Encoded: " + encoded;
+               for(i in textArr)
+               {
+                    for(j in aphabetArr)
+                    {
+                         if(textArr[i] == aphabetArr[j])
+                         {
+                              temp.push(count[j])
+                         }
+                    }
+               }
+               
+               for(i in temp)
+               {
+                    temp[i]+=shift;
+                    if(temp[i]<0)
+                    {
+                         temp[i]+=26;
+                    }
+                    if(temp[i]>25)
+                    {
+                         temp[i]-=26;
+                    }
+               }
+  	
+  	          temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+  	          for (i in temp)
+               {
+                    ecoded.push(temp[i])
+               }
+
+
+   	          encoded = (temp.join(""));
+               document.getElementById("ToCC").innerHTML = "Encoded: " + encoded;
           }
-          function DecryptTextB(TextId){
-               var text = document.getElementById(TextId).value;
+          function DecryptTextCC(TextId, Num){
+               let textArr = document.getElementById(TextId).value;
+               textArr = textArr.toLowerCase()
+               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+               let count = [...Array(26)].map((_, i) => i);
+               let num = document.getElementById(Num).value;
+               let shift = parseInt(num);
+               let ecoded = [];
+               let temp = [];
 
-               document.getElementById("FromBin").innerHTML = "Encoded: " + encoded;
+               for(i in textArr)
+               {   
+                    for(j in aphabetArr)
+                    {
+                         if(textArr[i] == aphabetArr[j])
+                         {
+                              temp.push(count[j])
+                         }
+                    }
+               }
+               
+               for(i in temp)
+               {
+                    temp[i]-=shift;
+                    if(temp[i]<0)
+                    {
+                         temp[i]+=26;
+                    }
+                    if(temp[i]>25)
+                    {
+                         temp[i]-=26;
+                    }
+               }
+  	
+  	          temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+  	          for (i in temp)
+               {
+                    ecoded.push(temp[i])
+               }
+
+
+   	          encoded = (temp.join(""));
+               document.getElementById("FromCC").innerHTML = "Encoded: " + encoded;
           }
 
           //Hex
