@@ -26,13 +26,13 @@
                               </a>
                          </li>
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
-                              <a href="Encryption.html" 
+                              <a href="Examples.html" 
                                    onmouseover="PlaySound('Pop')" 
                                    class="block text-black text-center px-4 pl-3.5 
                                    no-underline border-t-4 border-t-gray-500 
                                    hover:border-t-green-600 rounded-b-lg bg-gray-500 
                                    h-10 w-28 hover:h-11 hover:pt-2" >
-                                   Encryption
+                                   Examples
                               </a>
                          </li> 
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
@@ -156,7 +156,7 @@
                          Decode</b-button>
                     </div>
                     <br>
-                    <!-- Ceaser Cipher -->
+                    <!-- ASCII Shift Cipher -->
                     <div>
                          <h3 class="underline mb-1">ASCII Shift Cipher</h3>
                          <!-- Encode -->
@@ -167,7 +167,7 @@
                          Encode</b-button>
                          <br>
                          <!-- Decode -->
-                         <input type="text" id ="ASFText" value='vt{"og' class="w-1/2 my-1">
+                         <input type="text" id ="ASFText" value='86 22 29 34 17 9' class="w-1/2 my-1">
                          <input type="text" id ="ASFNum" value="2" class="w-[25%] my-1">
                          <b-button onclick="DecryptTextAS('ASFText', 'ASFNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
@@ -180,14 +180,14 @@
                          <!-- Encode -->
                          <input type="text" id ="CCTText" value="Try me" class="w-1/2 my-1">
                          <input type="text" id ="CCTNum" value="2" class="w-[25%] my-1">
-                         <b-button onclick="EncryptTextCC('CCTText', 'CCTNum')"
+                         <b-button onclick="EncryptTextCC('CCTText','CCTNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
                          Encode</b-button>
                          <br>
                          <!-- Decode -->
-                         <input type="text" id ="CCFText" value="vtaog" class="w-1/2 my-1">
+                         <input type="text" id ="CCFText" value="vta og" class="w-1/2 my-1">
                          <input type="text" id ="CCFNum" value="2" class="w-[25%] my-1">
-                         <b-button onclick="DecryptTextCC('CCFText', 'CCFNum')"
+                         <b-button onclick="DecryptTextCC('CCFText','CCFNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
                          Decode</b-button>
                     </div>
@@ -212,7 +212,7 @@
                          <p id="FromB64" class="my-1">Decoded:</p>
                     </div>
                     <br>
-                    <!-- ASCII Shif Cipher -->
+                    <!-- ASCII Shift Cipher -->
                     <div id="">
                          <h3 class="underline mb-1">ASCII Shift Cipher</h3>
                          <p id="ToAS" class="my-1">Encoded:</p>
@@ -265,116 +265,221 @@
           //ASCII Shift Cipher
           function EncryptTextAS(TextId, Num){
                let textArr = document.getElementById(TextId).value;
-               textArr = textArr.toLowerCase()
                textArr = textArr.split("")
-               let aphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
-               let count = [...Array(94)].map((_, i) => i);
-               let num = document.getElementById(Num).value;
+  			let num = document.getElementById(Num).value;
                let shift = parseInt(num);
-               let ecoded = [];
+			let encoded = [];
+               let alphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
                let temp = [];
-
-               for(i in textArr)
+  			let Add0 = [];
+               let count =[...Array(94)].map((_, i) => i)
+               
+               for(a in textArr)
                {
-                    for(j in aphabetArr)
+                    for (x in alphabetArr)
                     {
-                         if(textArr[i] == aphabetArr[j])
+                   
+                         if (textArr[a] == alphabetArr[x])
                          {
-                              temp.push(count[j])
+                     
+                              temp.push(count[x])
+                     
                          }
                     }
                }
-               
-               for(i in temp)
+
+  			for (i in temp){
+                 temp[i]+=32;
+               }
+  				
+  			for(i in temp)
                {
                     temp[i]+=shift;
-                    if(temp[i]<0)
-                    {
-                         temp[i]+=94;
-                    }
                     if(temp[i]>93)
                     {
                          temp[i]-=94;
                     }
+                    if(temp[i]<0)
+                    {
+                         temp[i]-=94;
+                    }
                }
-  	
-  	          temp = temp.map((_, i) => String.fromCharCode(_ + 32));
-  	          for (i in temp)
-               {
-                    ecoded.push(temp[i])
-               }
-
-
-   	          encoded = (temp.join(""));
+               encoded = temp.join(" ");
                document.getElementById("ToAS").innerHTML = "Encoded: " + encoded;
           }
           function DecryptTextAS(TextId, Num) {
                let textArr = document.getElementById(TextId).value;
-               textArr = textArr.toLowerCase()
-               let aphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
-               let count = [...Array(94)].map((_, i) => i);
-               let num = document.getElementById(Num).value;
+               textArr = textArr.split(" ")
+  			let num = document.getElementById(Num).value;
                let shift = parseInt(num);
-               let ecoded = [];
+			let encoded = [];
+               let alphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
                let temp = [];
+  				let Add0 = [];
 
-               for(i in textArr)
+  			   for (i in textArr){
+                 textArr[i]-=32;
+               }
+  				console.log(textArr)
+  			   for(i in textArr)
                {
-                    for(j in aphabetArr)
+                    textArr[i]-=shift;
+                    if(textArr[i]<0)
                     {
-                         if(textArr[i] == aphabetArr[j])
+                         textArr[i]+=94;
+                    }
+                    if(textArr[i]>93)
+                    {
+                         textArr[i]==94;
+                    }
+               }
+  
+  			for(a in textArr)
+               {
+                    for (x in alphabetArr)
+                    {
+                   
+                         if (textArr[a] == x)
                          {
-                              temp.push(count[j])
+                     
+                              temp.push(alphabetArr[x])
+                     
                          }
                     }
                }
-               
-               for(i in temp)
-               {
-                    temp[i]-=shift;
-                    if(temp[i]<0)
-                    {
-                         temp[i]+=94;
-                    }
-                    if(temp[i]>93)
-                    {
-                         temp[i]-=94;
-                    }
-               }
-  	
-  	          temp = temp.map((_, i) => String.fromCharCode(_ + 32));
-  	          for (i in temp)
-               {
-                    ecoded.push(temp[i])
-               }
 
 
-   	          encoded = (temp.join(""));
-               document.getElementById("FromAS").innerHTML = "Encoded: " + encoded;
+               encoded = temp.join("");
+               document.getElementById("FromAS").innerHTML = "Decoded: " + encoded;
           }
           
           //Ceasar Cipher
-          function EncryptTextCC(TextId, Num){
-               var text = document.getElementById(TextId).value;
-               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
-               let count = [...Array(26)].map((_, i) => i); 
+          function EncryptTextCC(TextId, Num)
+          {
+               let textArr = document.getElementById(TextId).value;
+               let text = textArr.toLowerCase();
                let num = document.getElementById(Num).value;
                let shift = parseInt(num);
-               let ecoded = [];
-               let temp = [];
+               let textArrWords = text.split(" ");//split into each word
+               //create an array of 26 ASCII values
+               let alphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+               //create an array of 26 numbers 0-25
+               let count = [...Array(26)].map((_, i) => i);
+               let encoded = [];
 
-               textArr = text.split(" ");
-               for (i in textArr){
-                    temp = (textArr[i]).split();
+
+               //for each word
+               for(i in textArrWords)
+               { 
+                    let newWord = [];
+                    let temp = [];
+                    let WordSplit = textArrWords[i];
+               
+                    WordSplit = WordSplit.split("");//get each letter
+                    //for each letter
+                    for(x in WordSplit)
+                    {
+                         //for each letter of the alphabet
+                         for(j in alphabetArr)
+                         {
+                              //if the letter is the same as current letter of alphabet
+                              if(WordSplit[x] == alphabetArr[j])
+                              {
+                                   //add number 0-25 letter to temp array
+                                   temp.push(count[j]);
+                              }
+                         } 
+                    }
+
+                    //for each letter in the temp array move it by shift 
+                    //value keeping within 26 letters of the alphabet.
                     for(i in temp)
                     {
-
+                         temp[i]+=shift;
+                         if(temp[i]<0)
+                         {
+                              temp[i]+=26;
+                         }
+                         if(temp[i]>25)
+                         {
+                              temp[i]-=26;
+                         }
                     }
+               
+                    //turn all letters into the asci value for the shifted letter
+                    temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+                    //join the word togther
+                    temp = temp.join("");
+                    //add it to the encoded array
+                    encoded.push(temp);
                }
-
-
+               //join the sentance together with spaces
+               encoded = encoded.join(" ");
                document.getElementById("ToCC").innerHTML = "Encoded: " + encoded;
           }
+          function DecryptTextCC(TextId, Num)
+          {
+               let textArr = document.getElementById(TextId).value;
+               let text = textArr.toLowerCase();
+               let num = document.getElementById(Num).value;
+               let shift = parseInt(num);
+               let textArrWords = text.split(" ");//split into each word
+               //create an array of 26 ASCII values
+               let alphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+               //create an array of 26 numbers 0-25
+               let count = [...Array(26)].map((_, i) => i);
+               let encoded = [];
 
+
+               //for each word
+               for(i in textArrWords)
+               { 
+                    let newWord = [];
+                    let temp = [];
+                    let WordSplit = textArrWords[i];
+               
+                    WordSplit = WordSplit.split("");//get each letter
+                    //for each letter
+                    for(x in WordSplit)
+                    {
+                         //for each letter of the alphabet
+                         for(j in alphabetArr)
+                         {
+                              //if the letter is the same as current letter of alphabet
+                              if(WordSplit[x] == alphabetArr[j])
+                              {
+                                   //add number 0-25 letter to temp array
+                                   temp.push(count[j]);
+                              }
+                         } 
+                    }
+
+                    //for each letter in the temp array move it by shift 
+                    //value keeping within 26 letters of the alphabet.
+                    for(i in temp)
+                    {
+                         temp[i]-=shift;
+                         if(temp[i]<0)
+                         {
+                              temp[i]+=26;
+                         }
+                         if(temp[i]>25)
+                         {
+                              temp[i]-=26;
+                         }
+                    }
+               
+                    //turn all letters into the asci value for the shifted letter
+                    temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+                    //join the word togther
+                    temp = temp.join("");
+                    //add it to the encoded array
+                    encoded.push(temp);
+               }
+               //join the sentance together with spaces
+               encoded = encoded.join(" ");
+               document.getElementById("FromCC").innerHTML = "Decoded: " + encoded;
+          }
+          
      </script>
 </html>
