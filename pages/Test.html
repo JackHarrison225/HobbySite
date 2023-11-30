@@ -116,10 +116,11 @@
 
           <!-- Main body of Page -->
           <main 
-          class="pt-8 bg-white grid w-full gap-4 
+          class="pt-8 bg-white grid w-[95%] gap-4 
           grid-cols-7 
           max-md:grid-cols-5  
-          max-sm:grid-cols-3 "><!-- Creates a grid -->
+          max-sm:grid-cols-3 
+          min-h-[75vh]"><!-- Creates a grid -->
                
                <h1 
                class="text-black underline 
@@ -144,49 +145,51 @@
                          <h3 class="underline mb-1">Base64</h3>  
                          <!-- Encode -->
                          <input type="text" id ="B64TText" value="Try me" class="w-3/4 my-1">
-                         <button onclick="EncryptTextB64('B64TText')"
+                         <b-button onclick="EncryptTextB64('B64TText')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Encode</button>
+                         Encode</b-button>
                          <br>
                          <!-- Decode -->
                          <input type="text" id ="B64FText" value="VHJ5IG1l" class="w-3/4 my-1">
-                         <button onclick="DecryptTextB64('B64FText')"
+                         <b-button onclick="DecryptTextB64('B64FText')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Decode</button>
+                         Decode</b-button>
                     </div>
                     <br>
-                    <!-- Ceaser Cypher -->
+                    <!-- Ceaser Cipher -->
                     <div>
-                         <h3 class="underline mb-1">Ceaser Cypher</h3>
+                         <h3 class="underline mb-1">ASCII Shift Cipher</h3>
+                         <!-- Encode -->
+                         <input type="text" id ="ASTText" value="Try me" class="w-1/2 my-1">
+                         <input type="text" id ="ASTNum" value="2" class="w-[25%] my-1">
+                         <b-button onclick="EncryptTextAS('ASTText', 'ASTNum')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Encode</b-button>
+                         <br>
+                         <!-- Decode -->
+                         <input type="text" id ="ASFText" value='vt{"og' class="w-1/2 my-1">
+                         <input type="text" id ="ASFNum" value="2" class="w-[25%] my-1">
+                         <b-button onclick="DecryptTextAS('ASFText', 'ASFNum')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Decode</b-button>
+                    </div>
+                    <br>
+                    <!-- Caeser Cipher -->
+                    <div>
+                         <h3 class="underline mb-1">Ceaser Cipher</h3>
                          <!-- Encode -->
                          <input type="text" id ="CCTText" value="Try me" class="w-1/2 my-1">
                          <input type="text" id ="CCTNum" value="2" class="w-[25%] my-1">
-                         <button onclick="EncryptTextCC('CCTText', 'CCTNum')"
+                         <b-button onclick="EncryptTextCC('CCTText', 'CCTNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Encode</button>
+                         Encode</b-button>
                          <br>
                          <!-- Decode -->
                          <input type="text" id ="CCFText" value="vtaog" class="w-1/2 my-1">
                          <input type="text" id ="CCFNum" value="2" class="w-[25%] my-1">
-                         <button onclick="DecryptTextCC('CCFText', 'CCFNum')"
+                         <b-button onclick="DecryptTextCC('CCFText', 'CCFNum')"
                          class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Decode</button>
-                    </div>
-                    <br>
-                    <!-- Hex -->
-                    <div>
-                         <h3 class="underline mb-1">Hex</h3>
-                         <!-- Encode -->
-                         <input type="text" id ="HTText" value="Try me" class="w-3/4 my-1">
-                         <button onclick="EncryptTextH('HTText')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Encode</button>
-                         <br>
-                         <!-- Decode -->
-                         <input type="text" id ="HFText" value="Try me" class="w-3/4 my-1">
-                         <button onclick="DecryptTextH('HFText')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
-                         Decode</button>
+                         Decode</b-button>
                     </div>
                     <br>
                     <br>
@@ -209,18 +212,18 @@
                          <p id="FromB64" class="my-1">Decoded:</p>
                     </div>
                     <br>
-                    <!-- Ceasaer Cypher -->
+                    <!-- ASCII Shif Cipher -->
                     <div id="">
-                         <h3 class="underline mb-1">Ceasaer Cypher</h3>
-                         <p id="ToCC" class="my-1">Encoded:</p>
-                         <p id="FromCC" class="my-1">Decoded:</p>
+                         <h3 class="underline mb-1">ASCII Shift Cipher</h3>
+                         <p id="ToAS" class="my-1">Encoded:</p>
+                         <p id="FromAS" class="my-1">Decoded:</p>
                     </div>
                     <br>
-                    <!-- Hex -->
+                    <!-- Caesar Cipher -->
                     <div id="">
-                         <h3 class="underline mb-1">Hex</h3>
-                         <p id="ToHex" class="my-1">Encoded:</p>
-                         <p id="FromHex" class="my-1">Decoded:</p>
+                         <h3 class="underline mb-1">Caesar Cipher</h3>
+                         <p id="ToCC" class="my-1">Encoded:</p>
+                         <p id="FromCC" class="my-1">Decoded:</p>
                     </div>
                     <br>
                     <br>
@@ -259,12 +262,13 @@
                document.getElementById("FromB64").innerHTML = "Decoded: " + Decoded;
           }
 
-          //Ceaser Cypher
-          function EncryptTextCC(TextId, Num){
+          //ASCII Shift Cipher
+          function EncryptTextAS(TextId, Num){
                let textArr = document.getElementById(TextId).value;
                textArr = textArr.toLowerCase()
-               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
-               let count = [...Array(26)].map((_, i) => i);
+               textArr = textArr.split("")
+               let aphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
+               let count = [...Array(94)].map((_, i) => i);
                let num = document.getElementById(Num).value;
                let shift = parseInt(num);
                let ecoded = [];
@@ -286,15 +290,15 @@
                     temp[i]+=shift;
                     if(temp[i]<0)
                     {
-                         temp[i]+=26;
+                         temp[i]+=94;
                     }
-                    if(temp[i]>25)
+                    if(temp[i]>93)
                     {
-                         temp[i]-=26;
+                         temp[i]-=94;
                     }
                }
   	
-  	          temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+  	          temp = temp.map((_, i) => String.fromCharCode(_ + 32));
   	          for (i in temp)
                {
                     ecoded.push(temp[i])
@@ -302,20 +306,20 @@
 
 
    	          encoded = (temp.join(""));
-               document.getElementById("ToCC").innerHTML = "Encoded: " + encoded;
+               document.getElementById("ToAS").innerHTML = "Encoded: " + encoded;
           }
-          function DecryptTextCC(TextId, Num){
+          function DecryptTextAS(TextId, Num) {
                let textArr = document.getElementById(TextId).value;
                textArr = textArr.toLowerCase()
-               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
-               let count = [...Array(26)].map((_, i) => i);
+               let aphabetArr = [...Array(94)].map((_, i) => String.fromCharCode(i + 32));
+               let count = [...Array(94)].map((_, i) => i);
                let num = document.getElementById(Num).value;
                let shift = parseInt(num);
                let ecoded = [];
                let temp = [];
 
                for(i in textArr)
-               {   
+               {
                     for(j in aphabetArr)
                     {
                          if(textArr[i] == aphabetArr[j])
@@ -330,15 +334,15 @@
                     temp[i]-=shift;
                     if(temp[i]<0)
                     {
-                         temp[i]+=26;
+                         temp[i]+=94;
                     }
-                    if(temp[i]>25)
+                    if(temp[i]>93)
                     {
-                         temp[i]-=26;
+                         temp[i]-=94;
                     }
                }
   	
-  	          temp = temp.map((_, i) => String.fromCharCode(_ + 97));
+  	          temp = temp.map((_, i) => String.fromCharCode(_ + 32));
   	          for (i in temp)
                {
                     ecoded.push(temp[i])
@@ -346,19 +350,31 @@
 
 
    	          encoded = (temp.join(""));
-               document.getElementById("FromCC").innerHTML = "Encoded: " + encoded;
+               document.getElementById("FromAS").innerHTML = "Encoded: " + encoded;
           }
-
-          //Hex
-          function EncryptTextH(TextId){
+          
+          //Ceasar Cipher
+          function EncryptTextCC(TextId, Num){
                var text = document.getElementById(TextId).value;
+               let aphabetArr = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+               let count = [...Array(26)].map((_, i) => i); 
+               let num = document.getElementById(Num).value;
+               let shift = parseInt(num);
+               let ecoded = [];
+               let temp = [];
 
-               document.getElementById("ToHex").innerHTML = "Encoded: " + encoded;
-          }
-          function DecryptTextH(TextId){
-               var text = document.getElementById(TextId).value;
+               textArr = text.split(" ");
+               for (i in textArr){
+                    temp = (textArr[i]).split();
+                    for(i in temp)
+                    {
 
-               document.getElementById("FromHex").innerHTML = "Encoded: " + encoded;
+                    }
+               }
+
+
+               document.getElementById("ToCC").innerHTML = "Encoded: " + encoded;
           }
+
      </script>
 </html>
