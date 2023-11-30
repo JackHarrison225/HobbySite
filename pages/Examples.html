@@ -31,7 +31,7 @@
                                    no-underline border-t-4 bg-green-600 
                                    border-t-green-600 rounded-b-lg 
                                    h-10 w-28 hover:h-11 hover:pt-2" >
-                                   Encryption
+                                   Examples
                               </p>
                          </li>
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
@@ -82,7 +82,7 @@
                          class="text-black bg-green-600 border-l-4 border-green-600
                          px-3.5 pl-3.5 text-base font-medium w-full hover:w-32
                          float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">
-                         Encryption
+                              Examples
                          </p>
                          <a href="Test.html" 
                          onmouseover="PlaySound('Pop')" 
@@ -137,9 +137,13 @@
                col-span-3 bg-gray-400
                shadow-lg shadow-green-600
                rounded-lg">
-               <h3 class="text-center underline">What is Encryption</h3>
-               <br>
-               <p class="text-justify px-2">In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information.</p>
+                    <h3 class="text-center underline">Base64</h3>
+                    <br>
+                    <p class="text-justify px-2">In computer programming, Base64 is a group of tetrasexagesimal binary-to-text encoding schemes that represent binary data (more specifically, a sequence of 8-bit bytes) in sequences of 24 bits that can be represented by four 6-bit Base64 digits.
+
+                         As with all binary-to-text encoding schemes, Base64 is designed to carry data stored in binary formats across channels that only reliably support text content. Base64 is particularly prevalent on the World Wide Web where one of its uses is the ability to embed image files or other binary assets inside textual assets such as HTML and CSS files.
+                         
+                         Base64 is also widely used for sending e-mail attachments. This is required because SMTP – in its original form – was designed to transport 7-bit ASCII characters only. This encoding causes an overhead of 33–37% (33% by the encoding itself; up to 4% more by the inserted line breaks).</p>
                </div>
 
                <div 
@@ -149,10 +153,13 @@
                max-md:col-start-2
                shadow-green-600 shadow-lg
                rounded-lg">
-                    <h3 class="text-center underline">When is it used</h3>
+                    <h3 class="text-center underline">ASCII Shift Cipher</h3>
                     <br>
-                    <p class="text-justify px-2">Encryption is used to protect data from being stolen, changed, or compromised and works by scrambling data into a secret code that can only be unlocked with a unique digital key.
-                    </p>
+                    <p class="text-justify px-2">ASCII (American Standard Code for Information Interchange), is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. Because of technical limitations of computer systems at the time it was invented, ASCII has just 128 code points, of which only 95 are printable characters, which severely limited its scope. Modern computer systems have evolved to use Unicode, which has millions of code points, but the first 128 of these are the same as the ASCII set.
+
+                         The Internet Assigned Numbers Authority (IANA) prefers the name US-ASCII for this character encoding.
+                         
+                         ASCII is one of the IEEE milestones. We can take these values and shift them up or down by a number to increse the encryption.</p>
                </div>
 
                <div 
@@ -160,32 +167,10 @@
                col-span-3 bg-gray-400
                shadow-lg shadow-green-600
                rounded-lg">
-               <h3 class="text-center underline">What are the Three types</h3>
-               <br>
-               <p class="text-justify px-2">
-                    <b><u>Symmetric</u></b>
-                    <br><br>
-                    The symmetric encryption method uses a single key both to encrypt and decrypt the data. 
-                    <br><br><br>
-                    <b><u>Asymmetric</u></b>
-                    <br><br>
-                    The second major encryption method is asymmetric encryption, also sometimes known as public key encryption.
-                    <br><br><br>
-                    <b><u>Hashing</u></b>
-                    <br><br>
-                    assign a numeric or alphanumeric string to (a piece of data) by applying a function whose output values are all the same number of bits in length.</p>
-               </div>
-
-               <div 
-               class="text-black col-start-4 p-2 
-               col-span-3 bg-gray-400 text-center
-               max-sm:col-start-2
-               max-md:col-start-2
-               shadow-green-600 shadow-lg
-               rounded-lg">
-                    <h3 class="text-center underline">Password Hashing</h3>
+                    <h3 class="text-center underline">Caeser Cipher</h3>
                     <br>
-                    <p class="text-justify px-2">Password hashing is the practice of algorithmically turning a password into ciphertext, or an irreversibly obfuscated version of itself, as a means of blocking against the threat of password breaches</p>
+                    <p class="text-justify px-2">In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code, or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+                         The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security.</p>
                </div>
                
           </main>
