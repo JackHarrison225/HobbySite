@@ -34,15 +34,23 @@
                                    h-10 w-28 hover:h-11 hover:pt-2" >
                                    Encryption
                               </a>
+                         </li> 
+                         <li class="float-left text-x1"><!-- Nav link for page ABC -->
+                              <p onmouseover="PlaySound('Pop')" 
+                                   class="block text-black text-center px-4 pl-3.5 
+                                   no-underline border-t-4 bg-green-600 
+                                   border-t-green-600 rounded-b-lg 
+                                   h-10 w-28 hover:h-11 hover:pt-2" >
+                                   Test
                          </li>
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
-                              <a href="#" 
+                              <a href="Puzzles.html" 
                                    onmouseover="PlaySound('Pop')" 
                                    class="block text-black text-center px-4 pl-3.5 
                                    no-underline border-t-4 border-t-gray-500 
                                    hover:border-t-green-600 rounded-b-lg bg-gray-500 
                                    h-10 w-28 hover:h-11 hover:pt-2" >
-                                   Nav 3
+                                   Puzzles
                               </a>
                          </li>
                          <li class="float-left text-x1"><!-- Nav link for page ABC -->
@@ -76,14 +84,21 @@
                          w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
                          p-1 h-10">
                               Encryption
-                         </a>
-                         <a href="#" 
+                         </a>  
+                         </p>
+                         <p onmouseover="PlaySound('Pop')" 
+                         class="text-black bg-green-600 border-l-4 border-green-600
+                         px-3.5 pl-3.5 text-base font-medium w-full hover:w-32
+                         float-left rounded-r-lg text-center hover:pl-10 p-1 h-10">
+                         Test
+                         </p>
+                         <a href="Puzzles.html" 
                          onmouseover="PlaySound('Pop')" 
                          class="text-black bg-gray-500 border-l-4 border-gray-500
                          hover:border-green-600 px-3.5 pl-3.5 text-base font-medium 
                          w-full hover:w-32 float-left rounded-r-lg text-center hover:pl-10 
                          p-1 h-10">
-                              Nav 3
+                              Puzzles
                          </a>
                          <a href="About.html" 
                          onmouseover="PlaySound('Pop')" 
@@ -112,49 +127,103 @@
                col-start-3 
                max-md:col-start-2
                max-sm:col-start-2 ">
-                    Test Your Skills
+                    Test Our Coverters
                </h1>
 
-               <img src="../Img/left.jpg" alt="BorderLeft"
-               style="width:138; height:427;"
-               class="h-full justify-center 
-               col-span-1 col-start-1 
-               row-span-1"><!-- border imge left -->
-               <p 
+               <!-- encoding and dencoding -->
+               <div 
                style="height:427;"
                class="text-black col-start-2 p-2 
                col-span-3 bg-gray-400
-               shadow-lg shadow-green-600">
-                    
-               </p>
-               <img src="../Img/right.jpg" alt="BorderRight"
-               style="width:138; height:427;"
-               class="justify-center 
-               col-span-1 col-start-7 row-span-1
-               max-sm:hidden
-               max-md:col-start-5"><!-- border imge right -->
+               shadow-lg shadow-green-600 items-center
+               rounded-lg">
+                    <H3 class="underline text-center">Encoders and Decoders</H3>
+                    <br>
+                    <!-- Base 64  -->
+                    <div>
+                         <h3 class="underline mb-1">Base64</h3>  
+                         <!-- Encode -->
+                         <input type="text" id ="B64TText" value="Try me" class="w-3/4 my-1">
+                         <button onclick="EncryptTextB64('B64TText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Encode</button>
+                         <br>
+                         <!-- Decode -->
+                         <input type="text" id ="B64FText" value="VHJ5IG1l" class="w-3/4 my-1">
+                         <button onclick="DecryptTextB64('B64FText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Decode</button>
+                    </div>
+                    <br>
+                    <!-- Binary -->
+                    <div>
+                         <h3 class="underline mb-1">Binary</h3>
+                         <!-- Encode -->
+                         <input type="text" id ="BTText" value="Try me" class="w-3/4 my-1">
+                         <button onclick="EncryptTextB('BTText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Encode</button>
+                         <br>
+                         <!-- Decode -->
+                         <input type="text" id ="BFText" value="Try me" class="w-3/4 my-1">
+                         <button onclick="DecryptTextB('BFText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Decode</button>
+                    </div>
+                    <br>
+                    <!-- Hex -->
+                    <div>
+                         <h3 class="underline mb-1">Hex</h3>
+                         <!-- Encode -->
+                         <input type="text" id ="HTText" value="Try me" class="w-3/4 my-1">
+                         <button onclick="EncryptTextH('HTText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Encode</button>
+                         <br>
+                         <!-- Decode -->
+                         <input type="text" id ="HFText" value="Try me" class="w-3/4 my-1">
+                         <button onclick="DecryptTextH('HFText')"
+                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         Decode</button>
+                    </div>
+                    <br>
+                    <br>
+               </div>
 
-
-               <img src="../Img/left.jpg" alt="BorderLeft"
-               style="width:138; height:427;"
-               class="h-full justify-center 
-               col-span-1 col-start-1 
-               row-span-1"><!-- border imge left -->
-               <p 
+               <!-- show the results -->
+               <div 
                style="height:427;"
                class="text-black col-start-4 p-2 
-               col-span-3 bg-gray-400 text-center
+               col-span-3 bg-gray-400 
                max-sm:col-start-2
                max-md:col-start-2
-               shadow-green-600 shadow-lg">
-
-               </p>
-               <img src="../Img/right.jpg" alt="BorderRight"
-               style="width:138; height:427;"
-               class="justify-center 
-               col-span-1 col-start-7 row-span-1
-               max-sm:hidden
-               max-md:col-start-5"><!-- border imge right -->
+               shadow-green-600 shadow-lg
+               rounded-lg">
+                    <H3 class="underline text-center">Answers</H3>
+                    <br>
+                    <!-- Base64 -->
+                    <div id="">
+                         <h3 class="underline mb-1">Base64</h3>
+                         <p id="ToB64" class="my-1">Encoded:</p>
+                         <p id="FromB64" class="my-1">Decoded:</p>
+                    </div>
+                    <br>
+                    <!-- Binary -->
+                    <div id="">
+                         <h3 class="underline mb-1">Binary</h3>
+                         <p id="ToBin" class="my-1">Encoded:</p>
+                         <p id="FromBin" class="my-1">Decoded:</p>
+                    </div>
+                    <br>
+                    <!-- Hex -->
+                    <div id="">
+                         <h3 class="underline mb-1">Hex</h3>
+                         <p id="ToHex" class="my-1">Encoded:</p>
+                         <p id="FromHex" class="my-1">Decoded:</p>
+                    </div>
+                    <br>
+                    <br>
+               </div>
                
                
           </main>
@@ -166,12 +235,51 @@
      </body>
 
      <script>
+          //Sound
           function PlaySound(SoundObj) 
           {
-               var thissound = document.getElementById(SoundObj);
-               thissound.currentTime = 0;
-               thissound.play();
+               var sound = document.getElementById(SoundObj);
+               sound.currentTime = 0;
+               sound.play();
                
+          }
+
+          //Base64
+          function EncryptTextB64(TextId){
+               var text = document.getElementById(TextId).value;
+               let encoded =btoa(text);
+
+               document.getElementById("ToB64").innerHTML = "Encoded: " + encoded;
+          }
+          function DecryptTextB64(TextId){
+               var text = document.getElementById(TextId).value;
+               let Decoded = atob(text);
+
+               document.getElementById("FromB64").innerHTML = "Decoded: " + Decoded;
+          }
+
+          //Binary
+          function EncryptTextB(TextId){
+               var text = document.getElementById(TextId).value;
+
+               document.getElementById("ToBin").innerHTML = "Encoded: " + encoded;
+          }
+          function DecryptTextB(TextId){
+               var text = document.getElementById(TextId).value;
+
+               document.getElementById("FromBin").innerHTML = "Encoded: " + encoded;
+          }
+
+          //Hex
+          function EncryptTextH(TextId){
+               var text = document.getElementById(TextId).value;
+
+               document.getElementById("ToHex").innerHTML = "Encoded: " + encoded;
+          }
+          function DecryptTextH(TextId){
+               var text = document.getElementById(TextId).value;
+
+               document.getElementById("FromHex").innerHTML = "Encoded: " + encoded;
           }
      </script>
 </html>
