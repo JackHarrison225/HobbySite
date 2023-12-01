@@ -10,7 +10,7 @@
      <body class="font-serif">
 
           <!-- NavBar holder -->
-          <div class="text-center">
+          <div class="text-center font-bold">
 
                <!-- Navagation bar -->
                <nav id="menu" class="fixed top-0 left-0 w-full max-sm:hidden">
@@ -63,12 +63,19 @@
                                    h-10 w-28 hover:h-11 hover:pt-2" >
                                    About
                               </a>
+                              
+                         </li>
+                         <li class="float-right max-w-[10vw]"><!-- Nav link for page ABC -->
+                              <img src="../Img/Logo.png" alt="Logo">
                          </li>
                     </ul>
                </nav>
 
                <!-- Mobile menu toggle -->
                <div class="sm:hidden left-0">
+                    <div class="float-right max-w-[10vw]"><!-- Nav link for page ABC -->
+                         <img src="../Img/Logo.png" alt="Logo">
+                    </div>
                     <div  class="fixed float-left top-0 left-0 w-28" >
                          <a href="../index.html" 
                          onmouseover="PlaySound('Pop')" 
@@ -181,8 +188,38 @@
 
           
           <!-- Footer -->
-          <footer class="mt-7 w-full h-40 bg-gray-500 br rounded-t-2xl">
-               
+          <footer class="mt-7 w-full h-40 bg-gray-400 br rounded-t-2xl">
+               <div class="grid grid-cols-3 w-full px-4">
+                    <div class="col-span-1">
+                         <h5 class="underline">The Kitchen</h5>
+                         <a href="https://discord.gg/wVHPYbCt" aria-label="Discord" class="float-left"
+                         >Join The Kitchen<img src="../Img/discordLogo.png" Class="max-w-[50px] float-right"></i></a>
+                         <br>
+                         <br>
+                         <h5 class="underline">Recive our Newslestter</h5>
+                         <form action="../Lists/EmailList">
+                              <input type="email" placeholder="JohnDoe@email.com">
+                         </form>
+                         
+                         </span><br>
+
+                    </div>
+
+                    <div class="col-span-1">
+                         <h5 class="underline">Courses</h5>
+                         <p>No Courses avalable yet</p>
+                    </div>
+
+                    <div class="col-span-1">
+                         <h5 class="underline">Categories</h5>
+                         <a href="../Index.html">Home</a><br>
+                         <a href="Examples.html">Examples</a><br>
+                         <a href="Test.html">Test</a><br>
+                         <a href="Puzzles.html">Puzzles</a><br>
+                         <a href="About.html">About</a><br>
+                    </div>
+               </div>
+
           </footer>
 
      </body>
