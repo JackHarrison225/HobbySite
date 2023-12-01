@@ -63,7 +63,7 @@
                                    About
                               </a>
                          </li>
-                         <li class="float-right max-w-[10vw]"><!-- Nav link for page ABC -->
+                         <li class="float-right max-w-[50px]"><!-- Nav link for page ABC -->
                               <img src="../Img/Logo.png" alt="Logo">
                          <li>
                     </ul>
@@ -71,7 +71,7 @@
 
                <!-- Mobile menu toggle -->
                <div class="sm:hidden left-0">
-                    <div class="float-right max-w-[10vw]"><!-- Nav link for page ABC -->
+                    <div class="float-right max-w-[50px]"><!-- Nav link for page ABC -->
                          <img src="../Img/Logo.png" alt="Logo">
                     </div>
                     <div  class="fixed float-left top-0 left-0 w-28" >
@@ -140,7 +140,7 @@
 
                <!-- encoding and dencoding -->
                <div 
-               class="text-black col-start-2 p-2 
+               class="text-black col-start-2 p-4 
                col-span-3 bg-gray-400
                shadow-lg shadow-green-600 items-center
                rounded-lg overflow-auto">
@@ -150,15 +150,15 @@
                     <div>
                          <h3 class="underline mb-1">Base64</h3>  
                          <!-- Encode -->
-                         <input type="text" id ="B64TText" value="Try me" class="w-3/4 my-1">
+                         <input type="text" id ="B64TText" value="Try me" class="w-[70%] rounded-l-lg py-1 pl-2 overflow-auto">
                          <b-button onclick="EncryptTextB64('B64TText')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-green-500 w-[20%] hover:bg-green-950 text-white pr-2 py-[7px] pl-1 rounded-r-lg ml-[-4px]">
                          Encode</b-button>
-                         <br>
+                         <br><br>
                          <!-- Decode -->
-                         <input type="text" id ="B64FText" value="VHJ5IG1l" class="w-3/4 my-1">
+                         <input type="text" id ="B64FText" value="VHJ5IG1l" class="w-[70%] rounded-l-lg py-1 pl-2 overflow-auto">
                          <b-button onclick="DecryptTextB64('B64FText')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-red-500  w-[20%] hover:bg-red-950 text-white pr-2 py-[7px] pl-1 rounded-r-lg ml-[-4px]">
                          Decode</b-button>
                     </div>
                     <br>
@@ -166,17 +166,18 @@
                     <div>
                          <h3 class="underline mb-1">ASCII Shift Cipher</h3>
                          <!-- Encode -->
-                         <input type="text" id ="ASTText" value="Try me" class="w-1/2 my-1">
-                         <input type="text" id ="ASTNum" value="2" class="w-[25%] my-1">
+                         <input type="text" id ="ASTText" value="Try me" class="w-[45%] rounded-l-lg py-1 pl-2 overflow-x-scroll">
+                         <input type="text" id ="ASTNum" value="2" class="w-[25%] my-1 p-1 ml-[-8px] border-l-4 border-l-gray-400">
                          <b-button onclick="EncryptTextAS('ASTText', 'ASTNum')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-green-500  w-[20%] hover:bg-green-950 text-white pr-2 py-[7px] pl-1 rounded-r-lg ml-[-4px]">
                          Encode</b-button>
                          <br>
+                         <br>
                          <!-- Decode -->
-                         <input type="text" id ="ASFText" value='86 22 29 34 17 9' class="w-1/2 my-1">
-                         <input type="text" id ="ASFNum" value="2" class="w-[25%] my-1">
+                         <input type="text" id ="ASFText" value='86 22 29 34 17 9' class="w-[45%] rounded-l-lg py-1 pl-2 overflow-x-scroll">
+                         <input type="text" id ="ASFNum" value="2" class="w-[25%] my-1 p-1 ml-[-8px] border-l-4 border-l-gray-400">
                          <b-button onclick="DecryptTextAS('ASFText', 'ASFNum')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-red-500 p-1  w-[30%] hover:bg-red-950 text-white pr-2 py-[7px] pl-1 rounded-r-lg ml-[-4px]">
                          Decode</b-button>
                     </div>
                     <br>
@@ -184,26 +185,24 @@
                     <div>
                          <h3 class="underline mb-1">Ceaser Cipher</h3>
                          <!-- Encode -->
-                         <input type="text" id ="CCTText" value="Try me" class="w-1/2 my-1">
-                         <input type="text" id ="CCTNum" value="2" class="w-[25%] my-1">
+                         <input type="text" id ="CCTText" value="Try me" class="w-[45%] rounded-l-lg py-1 pl-2 overflow-x-scroll">
+                         <input type="text" id ="CCTNum" value="2" class="w-[25%] my-1 p-1 ml-[-8px] border-l-4 border-l-gray-400">
                          <b-button onclick="EncryptTextCC('CCTText','CCTNum')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-green-500 w-[30%] hover:bg-green-950 text-white pr-2 py-[7px] pl-1 rounded-r-lg ml-[-4px]">
                          Encode</b-button>
                          <br>
                          <!-- Decode -->
-                         <input type="text" id ="CCFText" value="vta og" class="w-1/2 my-1">
-                         <input type="text" id ="CCFNum" value="2" class="w-[25%] my-1">
+                         <input type="text" id ="CCFText" value="vta og" class="w-[45%] rounded-l-lg py-1 pl-2 overflow-x-scroll">
+                         <input type="text" id ="CCFNum" value="2" class="w-[25%] my-1 p-1 ml-[-8px] border-l-4 border-l-gray-400">
                          <b-button onclick="DecryptTextCC('CCFText','CCFNum')"
-                         class="bg-white p-1 rounded-lg hover:bg-slate-300 right-0 my-1">
+                         class="bg-red-500 p-1 rounded-lg hover:bg-red-950 text-white right-0 my-1">
                          Decode</b-button>
                     </div>
-                    <br>
-                    <br>
                </div>
 
                <!-- show the results -->
                <div 
-               class="text-black col-start-4 p-2 
+               class="text-black col-start-4 p-4 
                col-span-3 bg-gray-400 
                max-sm:col-start-2
                max-md:col-start-2
@@ -231,36 +230,34 @@
                          <p id="ToCC" class="my-1">Encoded:</p>
                          <p id="FromCC" class="my-1">Decoded:</p>
                     </div>
-                    <br>
-                    <br>
                </div>
                
                
           </main>
           <!-- Footer -->
           <footer class="mt-7 w-full h-40 bg-gray-400 br rounded-t-2xl">
-               <div class="grid grid-cols-3 w-full px-4">
-                    <div class="col-span-1">
+               <div class="grid grid-cols-3 h-full w-full px-4 gap-[1px] bg-slate-600 overflow-auto">
+                    <div class="col-span-1 bg-gray-400 p-2">
                          <h5 class="underline">The Kitchen</h5>
                          <a href="https://discord.gg/wVHPYbCt" aria-label="Discord" class="float-left"
-                         >Join The Kitchen<img src="../Img/discordLogo.png" Class="max-w-[50px] float-right"></i></a>
+                         >Join The Kitchen<img src="../Img/discordLogo.png" Class="max-w-[50px] float-left"></i></a>
                          <br>
                          <br>
                          <h5 class="underline">Recive our Newslestter</h5>
-                         <form action="../Lists/EmailList">
-                              <input type="email" placeholder="JohnDoe@email.com">
+                         <form class="max-w[90%]" action="../Lists/EmailList">
+                              <input class="max-w-full px-2" type="email" placeholder="JohnDoe@email.com">
                          </form>
                          
                          </span><br>
 
                     </div>
 
-                    <div class="col-span-1">
+                    <div class="col-span-1 bg-gray-400 p-2">
                          <h5 class="underline">Courses</h5>
                          <p>No Courses avalable yet</p>
                     </div>
 
-                    <div class="col-span-1">
+                    <div class="col-span-1 bg-gray-400 p-2">
                          <h5 class="underline">Categories</h5>
                          <a href="../Index.html">Home</a><br>
                          <a href="Examples.html">Examples</a><br>
@@ -271,7 +268,6 @@
                </div>
 
           </footer>
-
      </body>
 
      <script>
